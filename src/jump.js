@@ -25,14 +25,14 @@ const jumper = () => {
   let callback        // to call when done scrolling            (function)
 
   // scroll position helper
-  function location() {
-    let top = container.scrollTop || container.scrollY || container.pageYOffset;
-    top = typeof top === 'undefined' ? 0 : top;
-    return top;
+  function location () {
+    let top = container.scrollTop || container.scrollY || container.pageYOffset
+    top = typeof top === 'undefined' ? 0 : top
+    return top
   }
 
   // element offset helper
-  function top(element) {
+  function top (element) {
     const elementTop = element.getBoundingClientRect().top
     const containerTop = container.getBoundingClientRect
         ? container.getBoundingClientRect().top
@@ -43,7 +43,7 @@ const jumper = () => {
 
   // scrollTo helper
 
-  function scrollTo(top) {
+  function scrollTo (top) {
     container.scrollTo
         ? container.scrollTo(0, top) // window
         : container.scrollTop = top  // custom container
@@ -107,7 +107,7 @@ const jumper = () => {
     a11y = options.a11y || false
 
     // resolve container
-    switch(typeof options.container) {
+    switch (typeof options.container) {
       case 'object':
         // we assume container is an HTML element (Node)
         container = options.container
